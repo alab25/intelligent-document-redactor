@@ -61,20 +61,27 @@ This PDF redaction project allows for intelligent redaction of:
    apptainer run --bind $(pwd)/resources/output:/cis6930sp25-project2/resources/output,$(pwd)/resources/stats.txt:/cis6930sp25-project2/resources/stats.txt 
    github_image19.sif --input "resources/*.pdf" --output "resources/output" --names "Flavius" --names "Cassius" --names "José Bonilla" --coref --stats 
    "resources/stats.txt"
+   
    --bind is important since .sif does not automatically has access to local folders and its required to store the output.
-4. You can check the output and stats file inside the resources/ouput folder.
+   
+5. You can check the output and stats file inside the resources/ouput folder.
 
 ## Functions Overview 
 1.parse_arguments()
   Handles command-line argument parsing for the tool.
+  
 2.load_nlp_models() 
   Load the spaCy NLP models required for entity recognition and coreference resolution.
+  
 3.get_input_files(input_globs)
   Expands glob patterns to get a list of all input files.
+  
 4.redact_pdf(input_path, output_path, names_to_redact, redact_entities, redact_coref, nlp, stats_data)
   Core function that processes a PDF file, identifies entities for redaction based on parameters, and produces a redacted version.
+  
 5.write_stats(stats_data, stats_file)
   Writes statistics about redacted content to a file or standard error.
+  
 6.main()
   Orchestrates the overall redaction process based on command-line arguments.
 
