@@ -310,7 +310,20 @@ def redact_pdf(
                     dict_res=dict(response_json)
                     clusters= dict_res["coreference mapping"]
 
-                    # code for dgx api redaction from clusters 
+
+                    # **************
+
+                    # Create a mapping from word positions in text to indices in words_info
+                    word_position_to_info_index = {}
+                    for i, word_info in enumerate(words_info):
+                        # Assuming words_info has some way to identify the word position
+                        # This part depends on how words_info is structured
+                        word_text = word_info[4]  # The actual word
+                        # You may need a more sophisticated way to map between text positions and words_info
+                        word_position_to_info_index[i] = i
+
+                    spans_to_redact = []
+
                     # For each cluster
                     for cluster_dict in clusters:
                         # First determine if this cluster should be redacted
@@ -318,10 +331,9 @@ def redact_pdf(
                         cluster_words = []
                         
                         # Collect all words in this cluster
-                        for position_idx, word in cluster_dict.items():
-                            position_idx = int(position_idx)  # Convert string index to integer
-                            if position_idx < len(words_info):
-                                cluster_words.append(word)
+                        for position_str, word in cluster_dict.items():
+                            position_idx = int(position_str)  # Convert string index to integer
+                            cluster_words.append(word)
                         
                         # Check if any word in the cluster is in names_to_redact
                         for word in cluster_words:
@@ -329,12 +341,19 @@ def redact_pdf(
                                 should_redact = True
                                 break
                         
-                        # If we should redact this cluster, add all its word indices
+                        # If we should redact this cluster, add all its word indices to spans_to_redact
                         if should_redact:
-                            for position_idx, word in cluster_dict.items():
-                                position_idx = int(position_idx)  # Convert string index to integer
-                                if position_idx < len(words_info):
-                                    spans_to_redact.append((position_idx, word))
+                            for position_str, word in cluster_dict.items():
+                                text_position = int(position_str)
+                                # Check if we have this position in our mapping
+                                if text_position in word_position_to_info_index:
+                                    info_index = word_position_to_info_index[text_position]
+                                    if info_index < len(words_info):
+                                        spans_to_redact.append((info_index, word))
+                                else:
+                                    # Handle case where position isn't in mapping
+                                    # This might need custom logic depending on your needs
+                                    print(f"Warning: Position {text_position} not found in words_info mapping")
 
                     # Sort spans to redact by position index
                     spans_to_redact.sort()
@@ -356,6 +375,8 @@ def redact_pdf(
                             len(entity),
                             "Coref"
                         ))
+
+                    # **************
 
         # Apply redactions
         page.apply_redactions()
