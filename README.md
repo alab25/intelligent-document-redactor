@@ -1,4 +1,5 @@
 # cis6930sp25-project2
+### Albert Abraham(39172603)
 This project involves a robust project for redacting sensitive information from PDF documents using natural language processing and coreference resolution.
 ## Overview 
 This PDF redaction project allows for intelligent redaction of:
