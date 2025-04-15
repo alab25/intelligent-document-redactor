@@ -331,6 +331,7 @@ def write_stats(stats_data, stats_file=None):
     else:
         for item in stats_data:
             print('\t'.join(map(str, item)), file=output)
+    return True
 
 def main():
     """Main function to execute the redaction system."""
