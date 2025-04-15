@@ -308,7 +308,7 @@ def redact_pdf(
                 else:
                     response_json=dgx_api(text)
                     dict_res=dict(response_json)
-                    clusters= dict_res["coreference mapping"]
+                    clusters= dict_res["coreference_mapping"]
 
                     # code for dgx api redaction from clusters 
                     # For each cluster
