@@ -401,6 +401,7 @@ def write_stats(stats_data, stats_file=None):
             print('\t'.join(map(str, item)), file=output)
     return True
 
+
 def dgx_api(text):
     url = "http://gpu020.cm.cluster:65535/resolve_coref"
     headers = {"Content-Type": "application/json"}
