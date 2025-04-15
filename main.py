@@ -308,10 +308,13 @@ def redact_pdf(
                 else:
                     response_json=dgx_api(text)
                     dict_res=dict(response_json)
-                    clusters= dict_res["coreference mapping"]
+                    clusters= dict_res["coreference_mapping"]
 
 
                     # **************
+
+                    # Get all words on the page with their positions
+                    words_info = page.get_text("words")
 
                     # Create a mapping from word positions in text to indices in words_info
                     word_position_to_info_index = {}
@@ -324,8 +327,7 @@ def redact_pdf(
 
                     spans_to_redact = []
 
-                    # Get all words on the page with their positions
-                    words_info = page.get_text("words")
+                    
 
                     # For each cluster
                     for cluster_dict in clusters:
