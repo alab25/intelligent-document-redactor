@@ -11,6 +11,7 @@ This PDF redaction project allows for intelligent redaction of:
 # How to run
 1. Go inside DGX shell and use this apptainer (.def) file to create a .sif file.
      Contents of the .def file below : -
+"""
 Bootstrap: docker
 From: python:3.12
 
@@ -51,7 +52,7 @@ From: python:3.12
     # Run main.py from the repository directory
     cd /cis6930sp25-project2
     python main.py "$@"
-
+"""
 2. Use this .def file to create a .sif file using command below : -
    apptainer build github_image19.sif github_image12.def
 
