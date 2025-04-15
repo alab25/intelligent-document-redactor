@@ -1,3 +1,229 @@
-document1.pdf	0x123	John Smith	10	Name
-document2.pdf	1x456	Jane Doe	8	PERSON
-document3.pdf	2x789	he	2	Coref
+ufo-sightings-short.pdf	1xRect(344.21484375, 377.8017272949219, 375.8816833496094, 387.7992248535156)	Flavius	7	Name
+ufo-sightings-short.pdf	1xRect(344.21484375, 377.8017272949219, 375.8816833496094, 387.7992248535156)	flavius	7	Name
+ufo-sightings-short.pdf	1xRect(344.21484375, 377.8017272949219, 375.8816833496094, 387.7992248535156)	FLAVIUS	7	Name
+ufo-sightings-short.pdf	1xRect(344.21484375, 377.8017272949219, 375.8816833496094, 387.7992248535156)	Flavius	7	Name
+ufo-sightings-short.pdf	1xRect(271.41796875, 415.3017272949219, 306.9754333496094, 425.2992248535156)	Cassius	7	Name
+ufo-sightings-short.pdf	1xRect(271.41796875, 415.3017272949219, 306.9754333496094, 425.2992248535156)	cassius	7	Name
+ufo-sightings-short.pdf	1xRect(271.41796875, 415.3017272949219, 306.9754333496094, 425.2992248535156)	CASSIUS	7	Name
+ufo-sightings-short.pdf	1xRect(271.41796875, 415.3017272949219, 306.9754333496094, 425.2992248535156)	Cassius	7	Name
+ufo-sightings-short.pdf	1xRect(344.21484375, 377.8017272949219, 375.8816833496094, 387.7992248535156)	Flavius	7	Name
+ufo-sightings-short.pdf	1xRect(271.41796875, 415.3017272949219, 306.9754333496094, 425.2992248535156)	Cassius	7	Name
+ufo-sightings-short.pdf	1x158	ships	5	Coref
+ufo-sightings-short.pdf	1x159	gleamed	7	Coref
+ufo-sightings-short.pdf	1x160	in	2	Coref
+ufo-sightings-short.pdf	1x161	the	3	Coref
+ufo-sightings-short.pdf	1x162	sky”:[25]	9	Coref
+ufo-sightings-short.pdf	1x163	depending	9	Coref
+ufo-sightings-short.pdf	1x164	on	2	Coref
+ufo-sightings-short.pdf	1x165	the	3	Coref
+ufo-sightings-short.pdf	1x166	translation.)	13	Coref
+ufo-sightings-short.pdf	1x167	76	2	Coref
+ufo-sightings-short.pdf	1x168	BC	2	Coref
+ufo-sightings-short.pdf	1x169	Spark	5	Coref
+ufo-sightings-short.pdf	1x314	Italia	6	Coref
+ufo-sightings-short.pdf	1x315	Historian	9	Coref
+ufo-sightings-short.pdf	1x316	Cassius	7	Coref
+ufo-sightings-short.pdf	1x317	Dio	3	Coref
+ufo-sightings-short.pdf	1x318	described	9	Coref
+ufo-sightings-short.pdf	1x319	a	1	Coref
+ufo-sightings-short.pdf	1x320	"fine	5	Coref
+ufo-sightings-short.pdf	1x321	rain	4	Coref
+ufo-sightings-short.pdf	1x322	resembling	10	Coref
+ufo-sightings-short.pdf	1x323	silver	6	Coref
+ufo-sightings-short.pdf	1x158	ships	5	Coref
+ufo-sightings-short.pdf	1x159	gleamed	7	Coref
+ufo-sightings-short.pdf	1x160	in	2	Coref
+ufo-sightings-short.pdf	1x161	the	3	Coref
+ufo-sightings-short.pdf	1x162	sky”:[25]	9	Coref
+ufo-sightings-short.pdf	1x163	depending	9	Coref
+ufo-sightings-short.pdf	1x164	on	2	Coref
+ufo-sightings-short.pdf	1x165	the	3	Coref
+ufo-sightings-short.pdf	1x166	translation.)	13	Coref
+ufo-sightings-short.pdf	1x167	76	2	Coref
+ufo-sightings-short.pdf	1x168	BC	2	Coref
+ufo-sightings-short.pdf	1x169	Spark	5	Coref
+ufo-sightings-short.pdf	1x314	Italia	6	Coref
+ufo-sightings-short.pdf	1x315	Historian	9	Coref
+ufo-sightings-short.pdf	1x316	Cassius	7	Coref
+ufo-sightings-short.pdf	1x317	Dio	3	Coref
+ufo-sightings-short.pdf	1x318	described	9	Coref
+ufo-sightings-short.pdf	1x319	a	1	Coref
+ufo-sightings-short.pdf	1x320	"fine	5	Coref
+ufo-sightings-short.pdf	1x321	rain	4	Coref
+ufo-sightings-short.pdf	1x322	resembling	10	Coref
+ufo-sightings-short.pdf	1x323	silver	6	Coref
+ufo-sightings-short.pdf	1x158	ships	5	Coref
+ufo-sightings-short.pdf	1x159	gleamed	7	Coref
+ufo-sightings-short.pdf	1x160	in	2	Coref
+ufo-sightings-short.pdf	1x161	the	3	Coref
+ufo-sightings-short.pdf	1x162	sky”:[25]	9	Coref
+ufo-sightings-short.pdf	1x163	depending	9	Coref
+ufo-sightings-short.pdf	1x164	on	2	Coref
+ufo-sightings-short.pdf	1x165	the	3	Coref
+ufo-sightings-short.pdf	1x166	translation.)	13	Coref
+ufo-sightings-short.pdf	1x167	76	2	Coref
+ufo-sightings-short.pdf	1x168	BC	2	Coref
+ufo-sightings-short.pdf	1x169	Spark	5	Coref
+ufo-sightings-short.pdf	1x314	Italia	6	Coref
+ufo-sightings-short.pdf	1x315	Historian	9	Coref
+ufo-sightings-short.pdf	1x316	Cassius	7	Coref
+ufo-sightings-short.pdf	1x317	Dio	3	Coref
+ufo-sightings-short.pdf	1x318	described	9	Coref
+ufo-sightings-short.pdf	1x319	a	1	Coref
+ufo-sightings-short.pdf	1x320	"fine	5	Coref
+ufo-sightings-short.pdf	1x321	rain	4	Coref
+ufo-sightings-short.pdf	1x322	resembling	10	Coref
+ufo-sightings-short.pdf	1x323	silver	6	Coref
+ufo-sightings-short.pdf	1x158	ships	5	Coref
+ufo-sightings-short.pdf	1x159	gleamed	7	Coref
+ufo-sightings-short.pdf	1x160	in	2	Coref
+ufo-sightings-short.pdf	1x161	the	3	Coref
+ufo-sightings-short.pdf	1x162	sky”:[25]	9	Coref
+ufo-sightings-short.pdf	1x163	depending	9	Coref
+ufo-sightings-short.pdf	1x164	on	2	Coref
+ufo-sightings-short.pdf	1x165	the	3	Coref
+ufo-sightings-short.pdf	1x166	translation.)	13	Coref
+ufo-sightings-short.pdf	1x167	76	2	Coref
+ufo-sightings-short.pdf	1x168	BC	2	Coref
+ufo-sightings-short.pdf	1x169	Spark	5	Coref
+ufo-sightings-short.pdf	1x314	Italia	6	Coref
+ufo-sightings-short.pdf	1x315	Historian	9	Coref
+ufo-sightings-short.pdf	1x316	Cassius	7	Coref
+ufo-sightings-short.pdf	1x317	Dio	3	Coref
+ufo-sightings-short.pdf	1x318	described	9	Coref
+ufo-sightings-short.pdf	1x319	a	1	Coref
+ufo-sightings-short.pdf	1x320	"fine	5	Coref
+ufo-sightings-short.pdf	1x321	rain	4	Coref
+ufo-sightings-short.pdf	1x322	resembling	10	Coref
+ufo-sightings-short.pdf	1x323	silver	6	Coref
+ufo-sightings-short.pdf	1x158	ships	5	Coref
+ufo-sightings-short.pdf	1x159	gleamed	7	Coref
+ufo-sightings-short.pdf	1x160	in	2	Coref
+ufo-sightings-short.pdf	1x161	the	3	Coref
+ufo-sightings-short.pdf	1x162	sky”:[25]	9	Coref
+ufo-sightings-short.pdf	1x163	depending	9	Coref
+ufo-sightings-short.pdf	1x164	on	2	Coref
+ufo-sightings-short.pdf	1x165	the	3	Coref
+ufo-sightings-short.pdf	1x166	translation.)	13	Coref
+ufo-sightings-short.pdf	1x167	76	2	Coref
+ufo-sightings-short.pdf	1x168	BC	2	Coref
+ufo-sightings-short.pdf	1x169	Spark	5	Coref
+ufo-sightings-short.pdf	1x314	Italia	6	Coref
+ufo-sightings-short.pdf	1x315	Historian	9	Coref
+ufo-sightings-short.pdf	1x316	Cassius	7	Coref
+ufo-sightings-short.pdf	1x317	Dio	3	Coref
+ufo-sightings-short.pdf	1x318	described	9	Coref
+ufo-sightings-short.pdf	1x319	a	1	Coref
+ufo-sightings-short.pdf	1x320	"fine	5	Coref
+ufo-sightings-short.pdf	1x321	rain	4	Coref
+ufo-sightings-short.pdf	1x322	resembling	10	Coref
+ufo-sightings-short.pdf	1x323	silver	6	Coref
+ufo-sightings-short.pdf	1x158	ships	5	Coref
+ufo-sightings-short.pdf	1x159	gleamed	7	Coref
+ufo-sightings-short.pdf	1x160	in	2	Coref
+ufo-sightings-short.pdf	1x161	the	3	Coref
+ufo-sightings-short.pdf	1x162	sky”:[25]	9	Coref
+ufo-sightings-short.pdf	1x163	depending	9	Coref
+ufo-sightings-short.pdf	1x164	on	2	Coref
+ufo-sightings-short.pdf	1x165	the	3	Coref
+ufo-sightings-short.pdf	1x166	translation.)	13	Coref
+ufo-sightings-short.pdf	1x167	76	2	Coref
+ufo-sightings-short.pdf	1x168	BC	2	Coref
+ufo-sightings-short.pdf	1x169	Spark	5	Coref
+ufo-sightings-short.pdf	1x314	Italia	6	Coref
+ufo-sightings-short.pdf	1x315	Historian	9	Coref
+ufo-sightings-short.pdf	1x316	Cassius	7	Coref
+ufo-sightings-short.pdf	1x317	Dio	3	Coref
+ufo-sightings-short.pdf	1x318	described	9	Coref
+ufo-sightings-short.pdf	1x319	a	1	Coref
+ufo-sightings-short.pdf	1x320	"fine	5	Coref
+ufo-sightings-short.pdf	1x321	rain	4	Coref
+ufo-sightings-short.pdf	1x322	resembling	10	Coref
+ufo-sightings-short.pdf	1x323	silver	6	Coref
+ufo-sightings-short.pdf	1x158	ships	5	Coref
+ufo-sightings-short.pdf	1x159	gleamed	7	Coref
+ufo-sightings-short.pdf	1x160	in	2	Coref
+ufo-sightings-short.pdf	1x161	the	3	Coref
+ufo-sightings-short.pdf	1x162	sky”:[25]	9	Coref
+ufo-sightings-short.pdf	1x163	depending	9	Coref
+ufo-sightings-short.pdf	1x164	on	2	Coref
+ufo-sightings-short.pdf	1x165	the	3	Coref
+ufo-sightings-short.pdf	1x166	translation.)	13	Coref
+ufo-sightings-short.pdf	1x167	76	2	Coref
+ufo-sightings-short.pdf	1x168	BC	2	Coref
+ufo-sightings-short.pdf	1x169	Spark	5	Coref
+ufo-sightings-short.pdf	1x314	Italia	6	Coref
+ufo-sightings-short.pdf	1x315	Historian	9	Coref
+ufo-sightings-short.pdf	1x316	Cassius	7	Coref
+ufo-sightings-short.pdf	1x317	Dio	3	Coref
+ufo-sightings-short.pdf	1x318	described	9	Coref
+ufo-sightings-short.pdf	1x319	a	1	Coref
+ufo-sightings-short.pdf	1x320	"fine	5	Coref
+ufo-sightings-short.pdf	1x321	rain	4	Coref
+ufo-sightings-short.pdf	1x322	resembling	10	Coref
+ufo-sightings-short.pdf	1x323	silver	6	Coref
+ufo-sightings-short.pdf	1x158	ships	5	Coref
+ufo-sightings-short.pdf	1x159	gleamed	7	Coref
+ufo-sightings-short.pdf	1x160	in	2	Coref
+ufo-sightings-short.pdf	1x161	the	3	Coref
+ufo-sightings-short.pdf	1x162	sky”:[25]	9	Coref
+ufo-sightings-short.pdf	1x163	depending	9	Coref
+ufo-sightings-short.pdf	1x164	on	2	Coref
+ufo-sightings-short.pdf	1x165	the	3	Coref
+ufo-sightings-short.pdf	1x166	translation.)	13	Coref
+ufo-sightings-short.pdf	1x167	76	2	Coref
+ufo-sightings-short.pdf	1x168	BC	2	Coref
+ufo-sightings-short.pdf	1x169	Spark	5	Coref
+ufo-sightings-short.pdf	1x314	Italia	6	Coref
+ufo-sightings-short.pdf	1x315	Historian	9	Coref
+ufo-sightings-short.pdf	1x316	Cassius	7	Coref
+ufo-sightings-short.pdf	1x317	Dio	3	Coref
+ufo-sightings-short.pdf	1x318	described	9	Coref
+ufo-sightings-short.pdf	1x319	a	1	Coref
+ufo-sightings-short.pdf	1x320	"fine	5	Coref
+ufo-sightings-short.pdf	1x321	rain	4	Coref
+ufo-sightings-short.pdf	1x322	resembling	10	Coref
+ufo-sightings-short.pdf	1x323	silver	6	Coref
+ufo-sightings-short.pdf	1x158	ships	5	Coref
+ufo-sightings-short.pdf	1x159	gleamed	7	Coref
+ufo-sightings-short.pdf	1x160	in	2	Coref
+ufo-sightings-short.pdf	1x161	the	3	Coref
+ufo-sightings-short.pdf	1x162	sky”:[25]	9	Coref
+ufo-sightings-short.pdf	1x163	depending	9	Coref
+ufo-sightings-short.pdf	1x164	on	2	Coref
+ufo-sightings-short.pdf	1x165	the	3	Coref
+ufo-sightings-short.pdf	1x166	translation.)	13	Coref
+ufo-sightings-short.pdf	1x167	76	2	Coref
+ufo-sightings-short.pdf	1x168	BC	2	Coref
+ufo-sightings-short.pdf	1x169	Spark	5	Coref
+ufo-sightings-short.pdf	1x314	Italia	6	Coref
+ufo-sightings-short.pdf	1x315	Historian	9	Coref
+ufo-sightings-short.pdf	1x316	Cassius	7	Coref
+ufo-sightings-short.pdf	1x317	Dio	3	Coref
+ufo-sightings-short.pdf	1x318	described	9	Coref
+ufo-sightings-short.pdf	1x319	a	1	Coref
+ufo-sightings-short.pdf	1x320	"fine	5	Coref
+ufo-sightings-short.pdf	1x321	rain	4	Coref
+ufo-sightings-short.pdf	1x322	resembling	10	Coref
+ufo-sightings-short.pdf	1x323	silver	6	Coref
+ufo-sightings-short.pdf	2xRect(399.01171875, 352.3017272949219, 452.9175720214844, 362.2992248535156)	José Bonilla	12	Name
+ufo-sightings-short.pdf	2xRect(399.01171875, 352.3017272949219, 452.9175720214844, 362.2992248535156)	josé bonilla	12	Name
+ufo-sightings-short.pdf	2xRect(399.01171875, 352.3017272949219, 452.9175720214844, 362.2992248535156)	José Bonilla	12	Name
+ufo-sightings-short.pdf	2xRect(399.01171875, 352.3017272949219, 420.1279602050781, 362.2992248535156)	José	4	Name
+ufo-sightings-short.pdf	2xRect(399.01171875, 352.3017272949219, 420.1279602050781, 362.2992248535156)	josé	4	Name
+ufo-sightings-short.pdf	2xRect(399.01171875, 352.3017272949219, 420.1279602050781, 362.2992248535156)	José	4	Name
+ufo-sightings-short.pdf	2xRect(78.7265625, 364.3017272949219, 108.73700714111328, 374.2992248535156)	Bonilla	7	Name
+ufo-sightings-short.pdf	2xRect(422.9070739746094, 352.3017272949219, 452.9175720214844, 362.2992248535156)	Bonilla	7	Name
+ufo-sightings-short.pdf	2xRect(367.84759521484375, 374.8017272949219, 397.8580627441406, 384.7992248535156)	Bonilla	7	Name
+ufo-sightings-short.pdf	2xRect(78.7265625, 364.3017272949219, 108.73700714111328, 374.2992248535156)	bonilla	7	Name
+ufo-sightings-short.pdf	2xRect(422.9070739746094, 352.3017272949219, 452.9175720214844, 362.2992248535156)	bonilla	7	Name
+ufo-sightings-short.pdf	2xRect(367.84759521484375, 374.8017272949219, 397.8580627441406, 384.7992248535156)	bonilla	7	Name
+ufo-sightings-short.pdf	2xRect(78.7265625, 364.3017272949219, 108.73700714111328, 374.2992248535156)	BONILLA	7	Name
+ufo-sightings-short.pdf	2xRect(422.9070739746094, 352.3017272949219, 452.9175720214844, 362.2992248535156)	BONILLA	7	Name
+ufo-sightings-short.pdf	2xRect(367.84759521484375, 374.8017272949219, 397.8580627441406, 384.7992248535156)	BONILLA	7	Name
+ufo-sightings-short.pdf	2xRect(78.7265625, 364.3017272949219, 108.73700714111328, 374.2992248535156)	Bonilla	7	Name
+ufo-sightings-short.pdf	2xRect(422.9070739746094, 352.3017272949219, 452.9175720214844, 362.2992248535156)	Bonilla	7	Name
+ufo-sightings-short.pdf	2xRect(367.84759521484375, 374.8017272949219, 397.8580627441406, 384.7992248535156)	Bonilla	7	Name
+ufo-sightings-short.pdf	3xRect(565.62890625, 473.8017272949219, 586.7451171875, 483.7992248535156)	José	4	Name
+ufo-sightings-short.pdf	3xRect(565.62890625, 473.8017272949219, 586.7451171875, 483.7992248535156)	josé	4	Name
+ufo-sightings-short.pdf	3xRect(565.62890625, 473.8017272949219, 586.7451171875, 483.7992248535156)	José	4	Name

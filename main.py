@@ -233,85 +233,130 @@ def redact_pdf(
                 
             # Process coreferences if requested
             if redact_coref:
-                
-                if "fastcoref" not in nlp.pipe_names:
-                    nlp.add_pipe("fastcoref", config={'model_architecture': 'LingMessCoref', 'model_path': 'biu-nlp/lingmess-coref', 'device': 'cpu'})
+                fastcoref=False
 
-                doc=nlp(text)
+                if fastcoref==True:
 
-                print('doc object from nlp(text) inside the redact_coref: part of code PAGE_NUM---',page_num)
-                print('PRINTING EACH ITEM inside page')
-                for each in doc:
-                    print("$$$$")
-                    print('each',each)
-                    print("***")
-                print('PRINTING EACH ITEM inside page')
-
-
-
-                clusters=doc._.coref_clusters
-                coref_mapping=dict()
-                coref_mapping["coreference_mapping"]=clusters
-                
-
-                # Create a list of span indices that should be redacted
-                spans_to_redact = []
-                
-                
-                # Get all words on the page with their positions
-                words_info = page.get_text("words")
-                
-                # Extract the text from the page to find the actual entity words
-                page_text = page.get_text()
-
-                # For each cluster
-                for cluster in clusters:
-                    # First determine if this cluster should be redacted
-                    should_redact = False
-                    cluster_words = []
+                    # USING fastcoref to get the clusters.
                     
-                    # Collect all words in this cluster
-                    for start_idx, end_idx in cluster:
-                        for word_idx in range(start_idx, end_idx):
-                            if word_idx < len(words_info):
-                                word = words_info[word_idx][4]  # Get the actual word
-                                cluster_words.append(word)
+                    if "fastcoref" not in nlp.pipe_names:
+                        nlp.add_pipe("fastcoref", config={'model_architecture': 'LingMessCoref', 'model_path': 'biu-nlp/lingmess-coref', 'device': 'cpu'})
+
+                    doc=nlp(text)
+
+                    clusters=doc._.coref_clusters
+                    coref_mapping=dict()
+                    coref_mapping["coreference_mapping"]=clusters
+
+                    # Create a list of span indices that should be redacted
+                    spans_to_redact = []
                     
-                    # Check if any word in the cluster is in names_to_redact
-                    for word in cluster_words:
-                        if word in expanded_names:
-                            should_redact = True
-                            break
                     
-                    # If we should redact this cluster, add all its word indices
-                    if should_redact:
+                    # Get all words on the page with their positions
+                    words_info = page.get_text("words")
+                    
+                    # Extract the text from the page to find the actual entity words
+                    # page_text = page.get_text()
+
+                    # For each cluster
+                    for cluster in clusters:
+                        # First determine if this cluster should be redacted
+                        should_redact = False
+                        cluster_words = []
+                        
+                        # Collect all words in this cluster
                         for start_idx, end_idx in cluster:
                             for word_idx in range(start_idx, end_idx):
                                 if word_idx < len(words_info):
-                                    word = words_info[word_idx][4]
-                                    spans_to_redact.append((word_idx, word))
+                                    word = words_info[word_idx][4]  # Get the actual word
+                                    cluster_words.append(word)
+                        
+                        # Check if any word in the cluster is in names_to_redact
+                        for word in cluster_words:
+                            if word in expanded_names:
+                                should_redact = True
+                                break
+                        
+                        # If we should redact this cluster, add all its word indices
+                        if should_redact:
+                            for start_idx, end_idx in cluster:
+                                for word_idx in range(start_idx, end_idx):
+                                    if word_idx < len(words_info):
+                                        word = words_info[word_idx][4]
+                                        spans_to_redact.append((word_idx, word))
 
-                # Sort spans to redact by position index
-                spans_to_redact.sort()
+                        # Sort spans to redact by position index
+                        spans_to_redact.sort()
 
-                # Now redact each word
-                for position_index, entity in spans_to_redact:
-                    # Create a rect for this entity
-                    rect = fitz.Rect(words_info[position_index][0], words_info[position_index][1], 
-                                    words_info[position_index][2], words_info[position_index][3])
+                        # Now redact each word
+                        for position_index, entity in spans_to_redact:
+                            # Create a rect for this entity
+                            rect = fitz.Rect(words_info[position_index][0], words_info[position_index][1], 
+                                            words_info[position_index][2], words_info[position_index][3])
 
-                    # Add redaction annotation
-                    page.add_redact_annot(rect, fill=(0, 0, 0))
+                            # Add redaction annotation
+                            page.add_redact_annot(rect, fill=(0, 0, 0))
 
-                    # Track stats
-                    stats_data.append((
-                        os.path.basename(input_path),
-                        f"{page_num}x{position_index}",
-                        entity,
-                        len(entity),
-                        "Coref"
-                    ))
-        
+                            # Track stats
+                            stats_data.append((
+                                os.path.basename(input_path),
+                                f"{page_num}x{position_index}",
+                                entity,
+                                len(entity),
+                                "Coref"
+                            ))
+                else:
+                    response_json=dgx_api(text)
+                    dict_res=dict(response_json)
+                    clusters= dict_res["coreference mapping"]
+
+                    # code for dgx api redaction from clusters 
+                    # For each cluster
+                    for cluster_dict in clusters:
+                        # First determine if this cluster should be redacted
+                        should_redact = False
+                        cluster_words = []
+                        
+                        # Collect all words in this cluster
+                        for position_idx, word in cluster_dict.items():
+                            position_idx = int(position_idx)  # Convert string index to integer
+                            if position_idx < len(words_info):
+                                cluster_words.append(word)
+                        
+                        # Check if any word in the cluster is in names_to_redact
+                        for word in cluster_words:
+                            if word in expanded_names:
+                                should_redact = True
+                                break
+                        
+                        # If we should redact this cluster, add all its word indices
+                        if should_redact:
+                            for position_idx, word in cluster_dict.items():
+                                position_idx = int(position_idx)  # Convert string index to integer
+                                if position_idx < len(words_info):
+                                    spans_to_redact.append((position_idx, word))
+
+                    # Sort spans to redact by position index
+                    spans_to_redact.sort()
+
+                    # Now redact each word
+                    for position_index, entity in spans_to_redact:
+                        # Create a rect for this entity
+                        rect = fitz.Rect(words_info[position_index][0], words_info[position_index][1],
+                                        words_info[position_index][2], words_info[position_index][3])
+                        
+                        # Add redaction annotation
+                        page.add_redact_annot(rect, fill=(0, 0, 0))
+                        
+                        # Track stats
+                        stats_data.append((
+                            os.path.basename(input_path),
+                            f"{page_num}x{position_index}",
+                            entity,
+                            len(entity),
+                            "Coref"
+                        ))
+
         # Apply redactions
         page.apply_redactions()
     
@@ -320,6 +365,7 @@ def redact_pdf(
     pdf_doc.close()
     
     return stats_data
+
 
 def write_stats(stats_data, stats_file=None):
     """Write statistics to file or stderr."""
@@ -334,7 +380,8 @@ def write_stats(stats_data, stats_file=None):
             print('\t'.join(map(str, item)), file=output)
     return True
 
-def testing_dgx_api(text):
+
+def dgx_api(text):
     url = "http://gpu020.cm.cluster:65535/resolve_coref"
     headers = {"Content-Type": "application/json"}
     payload = {"text": text}
@@ -396,7 +443,7 @@ def main():
     # Write statistics
     write_stats(stats_data, args.stats)
 
-    dgx_result=testing_dgx_api("John said he would help Mary. She was grateful.")
+    dgx_result=dgx_api("John said he would help Mary. She was grateful.")
     print('dgx_result ---- ',dgx_result)
     
     return 0
