@@ -313,6 +313,9 @@ def redact_pdf(
 
                     # **************
 
+                    # Get all words on the page with their positions
+                    words_info = page.get_text("words")
+
                     # Create a mapping from word positions in text to indices in words_info
                     word_position_to_info_index = {}
                     for i, word_info in enumerate(words_info):
@@ -324,8 +327,7 @@ def redact_pdf(
 
                     spans_to_redact = []
 
-                    # Get all words on the page with their positions
-                    words_info = page.get_text("words")
+                    
 
                     # For each cluster
                     for cluster_dict in clusters:
