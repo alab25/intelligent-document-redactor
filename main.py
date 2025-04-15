@@ -335,7 +335,7 @@ def write_stats(stats_data, stats_file=None):
     return True
 
 def testing_dgx_api(text):
-    url = "http://gpu002.cm.cluster:65535/resolve_coref"
+    url = "http://gpu020.cm.cluster:65535/resolve_coref"
     headers = {"Content-Type": "application/json"}
     payload = {"text": text}
 
