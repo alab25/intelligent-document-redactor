@@ -16,6 +16,7 @@ from transformers import pipeline
 
 from fastcoref import FCoref
 from fastcoref import spacy_component
+import json
 
 
 def parse_arguments(args=None):
@@ -333,6 +334,19 @@ def write_stats(stats_data, stats_file=None):
             print('\t'.join(map(str, item)), file=output)
     return True
 
+def testing_dgx_api(text):
+    url = "http://gpu002.cm.cluster:65535/resolve_coref"
+    headers = {"Content-Type": "application/json"}
+    payload = {"text": text}
+
+    try:
+        response = requests.post(url, headers=headers, data=json.dumps(payload))
+        response.raise_for_status()  # raise exception for HTTP errors
+        return response.json()       # or response.text if it's not JSON
+    except requests.exceptions.RequestException as e:
+        print(f"Request failed: {e}")
+        return None
+
 def main():
     """Main function to execute the redaction system."""
     args = parse_arguments()
@@ -381,6 +395,9 @@ def main():
     
     # Write statistics
     write_stats(stats_data, args.stats)
+
+    dgx_result=testing_dgx_api("John said he would help Mary. She was grateful.")
+    print('dgx_result ---- ',dgx_result)
     
     return 0
 
