@@ -324,6 +324,9 @@ def redact_pdf(
 
                     spans_to_redact = []
 
+                    # Get all words on the page with their positions
+                    words_info = page.get_text("words")
+
                     # For each cluster
                     for cluster_dict in clusters:
                         # First determine if this cluster should be redacted
