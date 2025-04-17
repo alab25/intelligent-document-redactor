@@ -65,6 +65,9 @@ This PDF redaction project allows for intelligent redaction of:
    
    --bind is important since .sif does not automatically has access to local folders and its required to store the output.
    
+4. To run the tests inside the container please run this command ---> apptainer exec --bind $(pwd)/resources/output:/cis6930sp25-project2/resources/output,$(pwd)/resources/stats.txt:/cis6930sp25-project2/resources/stats.txt github_image21.sif python -m pytest -v /cis6930sp25-project2/tests/
+NOTE: please change the .sif name from 'github_image21' to whatever is your .sif file name. 
+   
 5. You can check the output and stats file inside the resources/ouput folder.
 
 ## Functions Overview 
