@@ -6,11 +6,8 @@ import sys
 from pathlib import Path
 import fitz  # PyMuPDF
 import spacy
-#import neuralcoref
 import requests
 from tqdm import tqdm
-#from spacy.language import Language
-#import en_coreference_web_trf
 from spacy.lang.en import English
 from transformers import pipeline
 
@@ -53,27 +50,6 @@ def parse_arguments(args=None):
     )
     return parser.parse_args(args)
 
-def load_nlp_models_2():
-    """
-    COREF = en_coreference_web_trf.load()
-    # COREF = spacy.load("en_coreference_web_trf")
-    COREF.disable_pipes("span_resolver", "span_cleaner")
-    CORE = spacy.load("en_core_web_trf")
-
-    nlp2= spacy.blank("en")
-
-    for pipe in CORE.pipe_names:
-        if pipe not in nlp2.pipe_names:
-            nlp2.add_pipe(pipe, source=CORE)
-
-    for pipe in COREF.pipe_names:
-        if pipe not in nlp2.pipe_names:
-            nlp2.add_pipe(pipe, source=COREF)
-    
-    return nlp2
-    """
-    pass
-
 
 
 def load_nlp_models():
@@ -91,34 +67,6 @@ def get_input_files(input_globs):
         files = glob.glob(pattern)
         all_files.extend(files)
     return all_files
-
-def get_coreference_mapping(text, nlp):
-    # Process the text
-    doc = nlp(text)
-    
-    # Initialize mapping list
-    coref_pairs = []
-    
-    # Extract coreferences
-    if doc._.coref_chains:
-        for chain in doc._.coref_chains:
-            # Get the main/original mention
-            if len(chain) > 0:
-                # Find the head/original mention (typically the first one)
-                original_mention = chain.mentions[0]
-                original_text = original_mention.pretty_representation
-                original_idx = original_mention.root.i
-                
-                # Map all other mentions to this original
-                for mention in chain.mentions[1:]:
-                    mention_text = mention.pretty_representation
-                    mention_idx = mention.root.i
-                    
-                    # Add to mapping
-                    coref_pairs.append({str(mention_idx): mention_text, str(original_idx): original_text})
-    
-    # Return in the specified format
-    return {"coreference_mapping": coref_pairs}
 
 
 def redact_pdf(
@@ -311,18 +259,13 @@ def redact_pdf(
                     clusters= dict_res["coreference_mapping"]
 
 
-                    # **************
-
                     # Get all words on the page with their positions
                     words_info = page.get_text("words")
 
                     # Create a mapping from word positions in text to indices in words_info
                     word_position_to_info_index = {}
                     for i, word_info in enumerate(words_info):
-                        # Assuming words_info has some way to identify the word position
-                        # This part depends on how words_info is structured
                         word_text = word_info[4]  # The actual word
-                        # You may need a more sophisticated way to map between text positions and words_info
                         word_position_to_info_index[i] = i
 
                     spans_to_redact = []
@@ -331,7 +274,6 @@ def redact_pdf(
 
                     # For each cluster
                     for cluster_dict in clusters:
-                        # First determine if this cluster should be redacted
                         should_redact = False
                         cluster_words = []
                         
@@ -357,7 +299,6 @@ def redact_pdf(
                                         spans_to_redact.append((info_index, word))
                                 else:
                                     # Handle case where position isn't in mapping
-                                    # This might need custom logic depending on your needs
                                     print(f"Warning: Position {text_position} not found in words_info mapping")
 
                     # Sort spans to redact by position index
@@ -381,7 +322,6 @@ def redact_pdf(
                             "Coref"
                         ))
 
-                    # **************
 
         # Apply redactions
         page.apply_redactions()
