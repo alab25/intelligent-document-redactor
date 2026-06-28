@@ -26,7 +26,7 @@ This PDF redaction project allows for intelligent redaction of:
 	    pip install uv
 	
 	    # Clone repository with hardcoded token
-	    git clone https://alab25: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@github.com/alab25/cis6930sp25-project2.git /cis6930sp25-project2
+	    git clone https://alab25:{token-redacted-for-security}@github.com/alab25/cis6930sp25-project2.git /cis6930sp25-project2
 	
 	    # Change to the repository directory
 	    cd /cis6930sp25-project2
